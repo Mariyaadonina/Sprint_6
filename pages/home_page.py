@@ -6,6 +6,9 @@ from test_data import DZEN_URL
 
 class HomePageSamokat(BasePage):
 
+    def get_current_url(self):
+        return self.driver.current_url
+
     @allure.step('Нажатие кнопки "Заказать" в хедере')
     def click_order_button_header(self):
         self.find_element_with_wait(TestHomePageLocators.ORDER_BUTTON_HEADER)
